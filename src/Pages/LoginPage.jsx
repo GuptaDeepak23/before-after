@@ -6,6 +6,7 @@ import Lottie from "lottie-react";
 import FloatingInput from "../Components/FloatingInput";
 import TextPressure from "../Components/TextPressure";
 import BlurText from '../Components/BlurText'
+import { Link, useNavigate } from "react-router-dom";
 
 import dermatAnim from "./Dermatologist.json";
 import footerImage from "./footer.png"; // full width footer
@@ -13,6 +14,7 @@ import footerImage from "./footer.png"; // full width footer
 gsap.registerPlugin(SplitText);
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const titleRef = useRef(null);
   const [showPage, setShowPage] = useState(false);
 
@@ -43,6 +45,10 @@ const LoginPage = () => {
 
     return () => split.revert();
   }, []);
+
+  const handleLogin = () => {
+    navigate('/dashboard');
+  }
 
   return (
     <>
@@ -125,7 +131,7 @@ const LoginPage = () => {
                   <FloatingInput label="Mobile Number" type="tel" />
                   <FloatingInput label="OTP" type="text" />
 
-                  <button className="w-full bg-[#008C9E] cursor-pointer text-white py-3 rounded-lg font-semibold mt-4 hover:bg-[#007a8a] transition-colors">
+                  <button onClick={handleLogin} className="w-full bg-[#008C9E] cursor-pointer text-white py-3 rounded-lg font-semibold mt-4 hover:bg-[#007a8a] transition-colors">
                     Login
                   </button>
 
