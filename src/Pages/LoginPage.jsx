@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import Lottie from "lottie-react";
 import FloatingInput from "../Components/FloatingInput";
+import TextPressure from "../Components/TextPressure";
+import BlurText from '../Components/BlurText'
 
 import dermatAnim from "./Dermatologist.json";
 import footerImage from "./footer.png"; // full width footer
@@ -48,14 +50,9 @@ const LoginPage = () => {
 
 
       {/* upper div - White Card Design */}
-      <div
-  className="w-full h-screen relative overflow-hidden"
-  style={{
-    background: "linear-gradient(90deg, #D7D9DB 50%, #0B6B75 50%)",
-
-  }}
->
-
+      <div className="w-full h-screen relative overflow-hidden" style={{
+        background: 'linear-gradient(50deg, #E5E7EB 50%, #E5E7EB 50%, #008C9E 50%, #008C9E 100%)'
+      }}>
         {/* TITLE ANIMATION */}
         <h1
           ref={titleRef}
@@ -75,11 +72,11 @@ const LoginPage = () => {
             {/* White Card Container */}
             <div className="w-full mt-20 max-w-4xl h-[70vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex">
               {/* LEFT PANEL – LOTTIE ANIMATION */}
-              <div className="w-1/2  relative flex justify-center items-center" style={{ background: "#0F9BA8" }}>
+              <div className="w-1/2  relative flex justify-center items-center" style={{ background: "#f8f9ff" }}>
                 {/* Background building illustration */}
                 <img
                   src={footerImage}
-                  className="absolute -bottom-7 left-0 w-full h-1/3 opacity-5 object-cover"
+                  className="absolute -bottom-8 left-0 w-full h-1/3 opacity-5 object-cover"
                   alt="background"
                 />
                 
@@ -89,29 +86,51 @@ const LoginPage = () => {
               </div>
 
               {/* RIGHT PANEL – LOGIN FORM */}
-              <div className="w-1/2 relative  flex flex-col justify-center items-center p-10 bg-[#F4F6F8]">
+              <div className="w-1/2 relative  flex flex-col justify-center items-center p-10 bg-white">
                 {/* Background building illustration */}
                 <img
                   src={footerImage}
-                  className="absolute -bottom-7  right-0 w-full h-1/3 opacity-5 object-cover"
+                  className="absolute -bottom-8 right-0 w-full h-1/3 opacity-5 object-cover"
                   alt="background"
                 />
                 
                 <div className="relative z-10 w-full max-w-md">
-                  <h2 className="text-3xl mb-4 font-bold mb-2 text-center text-[#008C9E]">
+                  {/* <h2 className="text-3xl mb-4 font-bold mb-2 text-center text-[#008C9E]">
                     Before & After
-                  </h2>
-                  
+                  </h2> */}
+                   <div className="h-16 mb-6 flex items-center justify-center">
+                    <TextPressure
+                      text="Before & After"
+                      flex={true}
+                      alpha={false}
+                      stroke={false}
+                      width={true}
+                      weight={true}
+                      italic={true}
+                      textColor="#008C9E"
+                      strokeColor="#008C9E"
+                      minFontSize={20}
+                      className="h-full"
+                    />
+                    {/* <BlurText
+  text="Before & After"
+  delay={150}
+  animateBy="words"
+  direction="top"
+  
+  className="text-3xl  text-[#008C9E]"
+/> */}
+                  </div>
 
                   <FloatingInput label="Mobile Number" type="tel" />
                   <FloatingInput label="OTP" type="text" />
 
-                  <button className="w-full bg-[#0F9BA8] cursor-pointer text-white py-3 rounded-lg font-semibold mt-4 hover:bg-[#007a8a] transition-colors">
+                  <button className="w-full bg-[#008C9E] cursor-pointer text-white py-3 rounded-lg font-semibold mt-4 hover:bg-[#007a8a] transition-colors">
                     Login
                   </button>
 
                   <p className="text-center text-sm text-gray-500 mt-6">
-                    Developed by <b className="cursor-pointer text-[#0F9BA8]">Kanishka Software</b>
+                    Developed by <a href="https://kanishkasoftware.com" target="_blank" className="cursor-pointer font-bold text-[#008C9E]">Kanishka Software</a>
                   </p>
                 </div>
               </div>
