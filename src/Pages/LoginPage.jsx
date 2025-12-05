@@ -47,7 +47,7 @@ const LoginPage = () => {
   }, []);
 
   const handleLogin = () => {
-    navigate('/dashboard');
+    navigate('/admin/dashboard');
   }
 
   return (

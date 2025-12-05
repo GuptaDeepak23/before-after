@@ -1,12 +1,17 @@
 import React from 'react'
 import Navbar from '../../Components/Navbar'
+import Fade from '../../Components/Animations/Fade'
 
-const Dashboard = () => {
+const AdminDashboard = () => {
   return (
-    <div className='w-full bg-[#f5f7fb] h-screen '>
+    <Fade direction="up" delay={200}>
+      <div className="w-full min-h-screen" style={{ background: '#F3F7FA' }}>
         <Navbar />
-    </div>
+        
+        
+      </div>
+    </Fade>
   )
 }
 
-export default Dashboard
+export default AdminDashboard
